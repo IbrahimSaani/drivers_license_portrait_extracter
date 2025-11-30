@@ -18,16 +18,19 @@ This is a **Streamlit-based computer vision application** that automatically det
 
 drivers_license_portrait_extractor/
 │
-├─ .venv/                     # Virtual environment (created after setup)
-├─ src/
-│   ├─ app.py                 # Main Streamlit application (UI + logic)
-│   └─ face_extractor/
-│       ├─ __init__.py        # Makes the detector functions importable
-│       └─ detector.py        # Face detection + portrait cropping
+├─ .venv/                      # Virtual environment (ignored in git)
 │
-├─ requirements.txt           # Install dependencies
-├─ .gitignore                 # Ignore unnecessary files
-└─ README.md                  # Project documentation (this file)
+├─ src/
+│   ├─ app.py                  # Streamlit main app (UI)
+│   │
+│   └─ face_extractor/
+│       ├─ __init__.py         # Makes folder importable
+│       └─ detector.py         # OpenCV Haar-based face detection
+│
+├─ requirements.txt            # Dependencies
+├─ README.md                   # Project documentation
+└─ .gitignore                  # Files to ignore in Git
+
 
 
 
