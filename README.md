@@ -1,91 +1,88 @@
-## Driver’s License Portrait Extraction System
+# 🚗 Driver’s License Portrait Extraction System
 
-A lightweight Streamlit app to automatically detect and extract the portrait from a driver’s license image.
+This is a **Streamlit-based computer vision application** that automatically detects and extracts **portrait photos from driver’s licenses** using **OpenCV Haar Cascade face detection**.
 
- ## Overview
+---
 
-This project uses OpenCV Haar-based face detection to automatically locate and crop only the portrait photo from a driver’s license image. It provides a simple web interface built using Streamlit, where users can upload an image and instantly extract the portrait — no training or complex setup required!
+## 📸 **Project Overview**
 
-## Features
+✔ Upload a driver’s license image  
+✔ Detect face(s) automatically  
+✔ Extract only the **main portrait**  
+✔ Preview detection overlay  
+✔ Download extracted portrait as `.jpg`
 
-✔ Upload any driver’s license image (.jpg, .jpeg, .png, .webp)
-✔ Automatic face detection using OpenCV Haar Cascade
-✔ Extract only the largest face (driver’s main portrait)
-✔ Adjustable detection sensitivity & crop margin
-✔ Download the extracted portrait directly
-✔ 100% offline — runs locally
-✔ Clean modular code structure
+---
 
-🗂️ Project Structure
+## 📁 **Project Structure**
+
 drivers_license_portrait_extractor/
 │
 ├─ src/
-│   ├─ app.py                # Streamlit interface (main app)
-│   └─ face_extractor/
-│        ├─ __init__.py     # Makes functions importable
-│        └─ detector.py     # Face detection + cropping (OpenCV Haar cascade)
+│ ├─ app.py # Streamlit web application
+│ └─ face_extractor/
+│ ├─ init.py # Makes detector importable
+│ └─ detector.py # OpenCV Haar-based face detection & cropping
 │
-├─ requirements.txt         # Dependencies
-├─ README.md                # Project documentation
-└─ .gitignore               # Ignore unnecessary files
+├─ requirements.txt # Python dependencies
+├─ .gitignore # Ignore venv, cache, build files
+└─ README.md 
 
-⚙️ Installation & Setup
-1️⃣ Create Virtual Environment (Recommended)
 
-Windows PowerShell
 
+---
+
+## ⚙️ **Installation & Setup**
+
+### 1️⃣ Create Virtual Environment (Recommended)
+```bash
 python -m venv .venv
 
 
-macOS / Linux
-
-python3 -m venv .venv
-
 2️⃣ Activate It
-
-Windows PowerShell
+🪟 Windows PowerShell
 
 .venv\Scripts\Activate.ps1
 
 
-macOS / Linux
-
-source .venv/bin/activate
-
 3️⃣ Install Dependencies
+
 pip install --upgrade pip
 pip install -r requirements.txt
 
-▶️ Run the App
+
+▶️ Run the Application
+
 streamlit run src/app.py
 
 
-Once the browser opens:
+📦 requirements.txt
 
-Upload a driver’s license image
+streamlit
+opencv-python-headless
+numpy
+Pillow
 
-Adjust detection sensitivity & crop margin
+🧠 How It Works (Simplified)
 
-Get your portrait automatically!
+User uploads a driver’s license image
 
-🧠 How It Works (Simple Explanation)
+The image is read using OpenCV
 
-You upload a driver’s license image
+Face detection is applied using Haar Cascade
 
-OpenCV Haar cascade scans the image to find the face region
+The largest detected face is assumed to be the driver
 
-The largest detected face = license holder portrait
+The face is cropped and displayed
 
-The face is cropped using margin values
+User can download the extracted portrait
 
-You can download it instantly
+🛠️ Tech Stack
 
-📌 Technologies Used
-Technology	Purpose
-| Technology | Purpose                         |
-| ---------- | ------------------------------- |
-| Python     | Core programming language       |
-| Streamlit  | Web UI for the app              |
-| OpenCV     | Face detection + image cropping |
-| NumPy      | Image array handling            |
-| Pillow     | Image formatting & conversion   |
+| Component      | Technology Used       |
+| -------------- | --------------------- |
+| UI Framework   | Streamlit             |
+| Image Handling | OpenCV + NumPy        |
+| Detection      | OpenCV Haar Cascades  |
+| Language       | Python                |
+| IDE            | VS Code (recommended) |
