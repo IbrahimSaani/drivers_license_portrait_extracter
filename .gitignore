@@ -1,0 +1,66 @@
+# -------------------------------
+# 🔹 PYTHON / VENV
+# -------------------------------
+.venv/
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pickle
+
+# Ignore Python cache files
+*.prof
+*.log
+
+# -------------------------------
+# 🔹 VS CODE
+# -------------------------------
+.vscode/
+*.code-workspace
+
+# -------------------------------
+# 🔹 SYSTEM / OS FILES
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------------
+# 🔹 STREAMLIT CONFIG (optional)
+# Uncomment if using local config
+# -------------------------------
+# .streamlit/
+
+# -------------------------------
+# 🔹 IMAGES / UPLOADS (Optional)
+# Remove this if you want them in GitHub
+# -------------------------------
+uploads/
+*.jpg
+*.png
+*.jpeg
+*.webp
+
+# -------------------------------
+# 🔹 ZIP EXPORTS
+# -------------------------------
+*.zip
+
+# -------------------------------
+# 🔹 VIRTUAL ENV PACKAGES
+# -------------------------------
+*.egg-info/
+dist/
+build/
+
+
+# -------------------------------
+# 🔹 GIT BACKUP / MERGE FILES
+# -------------------------------
+*.swp
+*.swo
+*~
+*.orig
