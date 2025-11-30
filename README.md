@@ -1,102 +1,91 @@
-Driver’s License Portrait Extraction System
+## Driver’s License Portrait Extraction System
 
-Automated Portrait Photo Extraction Using OpenCV & Streamlit
+A lightweight Streamlit app to automatically detect and extract the portrait from a driver’s license image.
 
-A lightweight, no-training-needed system that automatically extracts the portrait photo from a driver’s license image using face detection. Built with Python, Streamlit, and OpenCV.
+ ## Overview
 
+This project uses OpenCV Haar-based face detection to automatically locate and crop only the portrait photo from a driver’s license image. It provides a simple web interface built using Streamlit, where users can upload an image and instantly extract the portrait — no training or complex setup required!
 
+## Features
 
-🚀 Features
+✔ Upload any driver’s license image (.jpg, .jpeg, .png, .webp)
+✔ Automatic face detection using OpenCV Haar Cascade
+✔ Extract only the largest face (driver’s main portrait)
+✔ Adjustable detection sensitivity & crop margin
+✔ Download the extracted portrait directly
+✔ 100% offline — runs locally
+✔ Clean modular code structure
 
-✔ Upload driver’s license image
-✔ Automatically detect & crop face (portrait)
-✔ Adjustable detection sensitivity
-✔ View detection overlay (green box around the face)
-✔ Download extracted portrait as .jpg
-✔ Supports JPG / JPEG / PNG / WEBP
-✔ Runs completely offline after installation
-✔ Works in VS Code, PyCharm, or Streamlit Cloud
-
-
-
-📂 Project Structure
-
+🗂️ Project Structure
 drivers_license_portrait_extractor/
 │
 ├─ src/
-│   ├─ app.py                     # Streamlit UI
+│   ├─ app.py                # Streamlit interface (main app)
 │   └─ face_extractor/
-│        ├─ __init__.py
-│        └─ detector.py           # OpenCV Haar-based face detection
+│        ├─ __init__.py     # Makes functions importable
+│        └─ detector.py     # Face detection + cropping (OpenCV Haar cascade)
 │
-├─ requirements.txt               # Install dependencies
-├─ README.md
-└─ .gitignore
+├─ requirements.txt         # Dependencies
+├─ README.md                # Project documentation
+└─ .gitignore               # Ignore unnecessary files
 
-
-
-🛠 Installation & Setup
-
+⚙️ Installation & Setup
 1️⃣ Create Virtual Environment (Recommended)
+
+Windows PowerShell
 
 python -m venv .venv
 
 
-2️⃣ Activate It 
+macOS / Linux
 
-Windows Powershell
+python3 -m venv .venv
+
+2️⃣ Activate It
+
+Windows PowerShell
 
 .venv\Scripts\Activate.ps1
 
 
-Mac / Linux
+macOS / Linux
 
 source .venv/bin/activate
 
-
 3️⃣ Install Dependencies
-
+pip install --upgrade pip
 pip install -r requirements.txt
 
-
-4️⃣ Run the Application
-
-
+▶️ Run the App
 streamlit run src/app.py
 
 
-our browser will open automatically 🌐
-If not → open this link manually:
-👉 http://localhost:8501
+Once the browser opens:
 
+Upload a driver’s license image
 
-⚙️ How It Works
+Adjust detection sensitivity & crop margin
 
-Haar Cascade (OpenCV) detects the face →
-Coordinates of the face →
-Crop that region with a margin →
-Display + Download image
+Get your portrait automatically!
 
-Detection Logic – detector.py
-faces = face_cascade.detectMultiScale(
-    gray,
-    scaleFactor=scale_factor,
-    minNeighbors=min_neighbors
-)
+🧠 How It Works (Simple Explanation)
 
+You upload a driver’s license image
 
-📌 Notes
+OpenCV Haar cascade scans the image to find the face region
 
-Works best with clear, frontal driver’s license images
+The largest detected face = license holder portrait
 
-For OCR detection, Tesseract must be installed (we skipped this for now)
+The face is cropped using margin values
 
-🙌 Credits
+You can download it instantly
 
-Built using:
-
-Python
-
-Streamlit
-
-OpenCV (Haar Cascade Face Detection)
+📌 Technologies Used
+Technology	Purpose
+| Technology | Purpose                         |
+| ---------- | ------------------------------- |
+| Python     | Core programming language       |
+| Streamlit  | Web UI for the app              |
+| OpenCV     | Face detection + image cropping |
+| NumPy      | Image array handling            |
+| Pillow     | Image formatting & conversion   |
